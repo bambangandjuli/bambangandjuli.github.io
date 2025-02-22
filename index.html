@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bambang & Juli Wedding</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;500;600&family=Petit+Formal+Script&display=swap" rel="stylesheet" />
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      /* Style for the entry screen */
+      #entry-screen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target="#navBar" id="weddingHome">
+    <!-- Entry Screen -->
+    <div id="entry-screen">
+      <h2 class="text-white text-outline mb-3">Assalamualaikum Warahmatullahi Wabarakatuh</h2>
+      <button id="enter-button" class="btn btn-primary btn-primary-outline-0 py-3 px-5">Tap to Enter</button>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+      <source src="music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Main Content (Hidden at First) -->
+    <div id="main-content" style="display: none">
+      <!-- Your wedding page content here -->
+      <!-- Spinner Start -->
+      <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar start -->
+      <div class="container-fluid sticky-top px-0">
+        <div class="container-fluid">
+          <div class="container px-0">
+            <nav class="navbar navbar-light navbar-expand-xl" id="navBar">
+              <a href="index.html" class="navbar-brand mx-auto">
+                <h4 class="text-primary display-6 fw-bold mb-0">Bambang<strong class="text-secondary">&</strong>Juli</h4>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar End -->
+
+      <!-- Carousel Start -->
+      <div class="container-fluid carousel-header px-0">
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img src="img/carousel-1.jpg" class="img-fluid" alt="Image" />
+              <div class="carousel-caption">
+                <div class="p-3 mx-auto animated zoomIn" style="max-width: 900px">
+                  <h4 class="text-white text-outline mb-3">
+                    يَٰٓأَيُّهَا ٱلنَّاسُ إِنَّا خَلَقْنَٰكُم مِّن ذَكَرٍ وَأُنثَىٰ وَجَعَلْنَٰكُمْ شُعُوبًا وَقَبَآئِلَ لِتَعَارَفُوٓا۟ ۚ إِنَّ أَكْرَمَكُمْ عِندَ ٱللَّهِ أَتْقَىٰكُمْ ۚ إِنَّ ٱللَّهَ عَلِيمٌ خَبِيرٌ
+                  </h4>
+                  <h6 class="text-white text-outline mb-3">
+                    Hai manusia, sesungguhnya Kami menciptakan kamu dari seorang laki-laki dan seorang perempuan dan menjadikan kamu berbangsa-bangsa dan bersuku-suku supaya kamu saling kenal-mengenal. Sesungguhnya orang yang paling mulia
+                    di antara kamu di sisi Allah ialah orang yang paling takwa di antara kamu. Sesungguhnya Allah Maha Mengetahui lagi Maha Mengenal.
+                  </h6>
+                  <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-5" style="border-style: double">
+                    <h4 class="text-white text-outline fw-bold mb-0" style="letter-spacing: 3px">QS. Al-Hujurat, Ayat 13</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="img/carousel-2.jpg" class="img-fluid bg-secondary" alt="Image" />
+              <div class="carousel-caption">
+                <div class="p-3 mx-auto animated zoomIn" style="max-width: 900px">
+                  <h4 class="text-white text-outline mb-3">وَاَنْكِحُوا الْاَيَامٰى مِنْكُمْ وَالصّٰلِحِيْنَ مِنْ عِبَادِكُمْ وَاِمَاۤىِٕكُمْۗ اِنْ يَّكُوْنُوْا فُقَرَاۤءَ يُغْنِهِمُ اللّٰهُ مِنْ فَضْلِهٖۗ وَاللّٰهُ وَاسِعٌ عَلِيْمٌ</h4>
+                  <h6 class="text-white text-outline mb-3">
+                    Nikahkanlah orang-orang yang masih membujang di antara kamu dan juga orang-orang yang layak (menikah) dari hamba-hamba sahayamu, baik laki-laki maupun perempuan. Jika mereka miskin, Allah akan memberi kemampuan kepada
+                    mereka dengan karunia-Nya. Allah Mahaluas (pemberian-Nya) lagi Maha Mengetahui.
+                  </h6>
+                  <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-5" style="border-style: double">
+                    <h4 class="text-white text-outline fw-bold mb-0" style="letter-spacing: 3px">QS. An-Nur, Ayat 32</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="img/carousel-3.jpg" class="img-fluid bg-secondary" alt="Image" />
+              <div class="carousel-caption">
+                <div class="p-3 mx-auto animated zoomIn" style="max-width: 900px">
+                  <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4" style="border-style: double">
+                    <h4 class="text-white text-outline text-uppercase fw-bold mb-0" style="letter-spacing: 3px">WE ARE GETTING MARRIED</h4>
+                  </div>
+                  <h1 class="display-1 text-outline text-capitalize text-white mb-3">Bambang <i class="fa fa-heart fa-sm text-primary"></i> Juli</h1>
+                  <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4" style="border-style: double">
+                    <h4 class="text-white text-outline fw-bold mb-0" style="letter-spacing: 3px">Rabu, 26 Februari 2025</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <!-- Carousel End -->
+
+      <!-- Hello! Start -->
+      <div class="container-fluid position-relative py-5" id="weddingAbout">
+        <div class="position-absolute" style="top: -35px; right: 0">
+          <img src="img/tamp-bg-1.png" class="img-fluid" alt="" />
+        </div>
+        <div class="position-absolute" style="top: -10px; left: 0; transform: rotate(270deg)">
+          <img src="img/tamp-bg-1.png" class="img-fluid" alt="" />
+        </div>
+        <div class="container position-relative py-5">
+          <div class="mx-auto text-center mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800">
+            <h1 class="text-primary display-1">Hello!</h1>
+            <h4 class="text-dark mb-0">We invite you to celebrate our wedding</h4>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="row g-4 align-items-center">
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                  <div class="d-flex">
+                    <div class="text-end pe-4">
+                      <h3 class="text-primary mb-3">Bambang Putra Akbar, S.Pd.</h3>
+                      <h6 class="text-black mb-1">Anak pertama dari ibu Ida Fitdiana & bapak Nasip Akbar</h6>
+                      <p class="text-dark mb-0">Saya seorang guru yang selalu ingin melihat peserta didik saya selalu siap belajar dan bermain itu lah hakikatnya menjadi guru yang ceria.☺️😁</p>
+                    </div>
+                    <img src="img/groom.jpg" class="img-fluid img-border fixed-width-img" alt="" />
+                  </div>
+                </div>
+                <div class="col-lg-2 wow fadeIn" data-wow-delay="0.5s">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <i class="fa fa-heart fa-5x text-primary"></i>
+                  </div>
+                </div>
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                  <div class="d-flex">
+                    <img src="img/bride.jpg" class="img-fluid img-border fixed-width-img" alt="" />
+                    <div class="ps-4 text-container">
+                      <h3 class="text-primary mb-3">Juli Muliati, S.A.B</h3>
+                      <h6 class="text-black mb-1">Anak Kempat dari ibu Sakdiah & bapak Surtam (alm)</h6>
+                      <p class="text-dark mb-0">Saya suka sekali laki laki yang humoris, komitmen dan suka ngelucu. Karena yang humoris itu membuat hati saya bahagia dan nyaman.🩷☺️</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Hello! End -->
+
+      <!--- Wedding Date -->
+      <div class="container-fluid wedding-date-bg position-relative py-5">
+        <div class="position-absolute" style="top: -100px; right: 0">
+          <img src="img/tamp-bg-1.png" class="img-fluid" alt="" />
+        </div>
+        <div class="position-absolute" style="top: -80px; left: 0; transform: rotate(270deg)">
+          <img src="img/tamp-bg-1.png" class="img-fluid" alt="" />
+        </div>
+        <div class="container py-5 wow zoomIn" data-wow-delay="0.1s">
+          <div class="wedding-date text-center bg-light p-5" style="border-style: double !important; border: 15px solid rgba(253, 93, 93, 0.5)">
+            <div class="wedding-date-content">
+              <div class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4" style="border-style: double">
+                <h4 class="text-dark text-uppercase fw-bold mb-0" style="letter-spacing: 3px">26 Februari, 2025</h4>
+              </div>
+              <h1 class="display-4">We Are Getting Married</h1>
+              <p class="text-dark fs-5">Dusun Motong Retek, Desa Dane Rase, Kecamatan Keruak, Kabupaten Lombok Timur, NTB</p>
+              <div class="d-flex align-items-center justify-content-center mb-5">
+                <div class="simply-countdown simply-countdown-one"></div>
+              </div>
+            </div>
+            <div class="position-absolute" style="top: 15%; right: -30px; transform: rotate(320deg); opacity: 0.5; z-index: 1">
+              <img src="img/attendance-bg.png" class="img-fluid" alt="" />
+            </div>
+            <div class="position-absolute" style="top: 15%; left: -10px; transform: rotate(-320deg); opacity: 0.5; z-index: 1">
+              <img src="img/attendance-bg.png" class="img-fluid" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="row g-5 justify-content-center text-center">
+          <div class="col-12 wow fadeIn" data-wow-delay="0.2s">
+            <div class="border-secondary" style="border-style: double">
+              <iframe
+                class="w-100"
+                style="height: 450px; margin-bottom: -6px"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1971.5167202970622!2d116.500521!3d-8.782924!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc530075b015ab%3A0xa1f2d39518ca06e1!2sBambang%20%26%20Juli%20Wedding!5e0!3m2!1sid!2sid!4v1740253421395!5m2!1sid!2sid"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Wedding Date -->
+
+      <!-- Gallery Start -->
+      <div class="container-fluid gallery position-relative py-5" id="weddingGallery">
+        <div class="position-absolute" style="top: -95px; right: 0">
+          <img src="img/tamp-bg-1.png" class="img-fluid" alt="" />
+        </div>
+        <div class="position-absolute" style="top: -80px; left: 0; transform: rotate(270deg)">
+          <img src="img/tamp-bg-1.png" class="img-fluid" alt="" />
+        </div>
+        <div class="container position-relative py-5">
+          <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px">
+            <h1 class="display-2 text-dark">Wedding Gift</h1>
+            <p class="fs-5 text-dark">Terimakasih telah melengkapi kebahagiaan kami dengan doa tulus, kehadiran, dan hadiah indah anda.</p>
+          </div>
+          <div class="mt-5">
+            <div class="row g-5 justify-content-center text-center">
+              <div class="col-md-4 wow fadeIn" data-wow-delay="0.3s">
+                <div class="p-4 border-secondary" style="border-style: double">
+                  <img src="img/credit card-02.png" class="img-fluid mb-3" alt="" />
+                  <button onclick="copyText(this)" data-text="7240714967" class="btn btn-primary btn-primary-outline-0 py-3 px-5">Salin</button>
+                </div>
+              </div>
+              <div class="col-md-4 wow fadeIn" data-wow-delay="0.5s">
+                <div class="p-4 border-secondary" style="border-style: double">
+                  <img src="img/credit card-03.png" class="img-fluid mb-3" alt="" />
+                  <button onclick="copyText(this)" data-text="1795257828" class="btn btn-primary btn-primary-outline-0 py-3 px-5">Salin</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Gallery end -->
+
+      <!-- Copyright Start -->
+      <div class="container-fluid copyright py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p>
+                <small class="block">Made with<span class="heart-beat">❤️</span>by <a href="https://ajisumiardi.github.io" target="_blank">guru Informatika</a> </small>
+              </p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Copyright End -->
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Countdown timer -->
+    <script src="js/simplyCountdown.js"></script>
+
+    <script>
+      var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+
+      // default example
+      simplyCountdown('.simply-countdown-one', {
+        year: 2025,
+        month: 2,
+        day: 26,
+        hours: 18,
+      });
+
+      //jQuery example
+      $('#simply-countdown-losange').simplyCountdown({
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate(),
+        hour: d.getHours(),
+        enableUtc: false,
+      });
+    </script>
+
+    <script>
+      function copyText(button) {
+        var text = button.getAttribute('data-text'); // Get text from data-text attribute
+        navigator.clipboard
+          .writeText(text)
+          .then(() => {
+            alert('Nomor rekening telah tersalin. Kami ucapkan terimakasih banyak sebelumnya.'); // Show confirmation
+          })
+          .catch((err) => {
+            console.error('Failed to copy: ', err);
+          });
+      }
+    </script>
+
+    <script>
+      document.getElementById('enter-button').addEventListener('click', function () {
+        // Play music
+        let audio = document.getElementById('bg-music');
+        audio.play().catch((error) => console.log('Autoplay blocked:', error));
+
+        // Hide entry screen & show main content
+        document.getElementById('entry-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      });
+    </script>
+  </body>
+</html>
